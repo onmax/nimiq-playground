@@ -27,10 +27,10 @@ router.beforeEach(() => {
 </script>
 
 <template>
-  <div grid="~ rows-[min-content_1fr]" relative h-full>
-    <GuideSelector />
+  <div grid="~ rows-[min-content_1fr]" relative size-full>
+    <GuideSelector w-full />
     <div relative h-full of-hidden>
-      <article ref="docsEl" class="max-w-none prose" h-full of-auto p6>
+      <article ref="docsEl" class="prose" h-full of-auto p6>
         <ContentDoc />
         <div mt8 py2 grid="~ cols-[1fr_1fr] gap-4">
           <div>

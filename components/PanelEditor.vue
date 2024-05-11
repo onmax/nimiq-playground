@@ -28,9 +28,9 @@ function _onTextInput() {
 <template>
 
   <div size-full grid="~ rows-[min-content_1fr]">
-    <div flex="~ gap-8 items-center" border="b base dashed" bg-neutral-200 px-16 py-8>
-      <!-- <FileIcon :path="play.fileSelected?.filepath || ''" /> -->
-      <span flex-auto text-12>Editor</span>
+    <div panel-header>
+      <div i-nimiq:icons-lg-languages text-16 />
+      <span flex-auto>Editor</span>
       <!-- <ButtonShowSolution my--4 mr--12 flex-none rounded px-8 py-4 text-sm op50 hover="bg-active op100" /> -->
     </div>
     <LazyPanelEditorMonaco v-if="play.fileSelected" v-model="input" :filepath="play.fileSelected.filepath" h-full w-full

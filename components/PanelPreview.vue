@@ -24,16 +24,9 @@ watch(
 
 <template>
   <div h-full :class="play.status === PlaygroundStatus.Ready ? ' grid grid-rows-[min-content_1fr]' : 'flex'" w-full>
-    <div
-      v-if="play.status === PlaygroundStatus.Ready"
-      flex="~ items-center gap-8"
-      border="b base dashed" bg-neutral-100 pl-4 pr-2
-    >
-      <div
-        flex="~ gap-2 auto items-center" p-8>
-        <div i-ph-globe-duotone />
-        <span text-12>Preview</span>
-      </div>
+    <div v-if="play.status === PlaygroundStatus.Ready" panel-header>
+        <div i-nimiq:globe text-14 />
+        <span >Preview</span>
     </div>
     <div relative h-full w-full>
       <PanelPreviewLoading />

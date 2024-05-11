@@ -26,6 +26,9 @@ export default defineNuxtConfig({
       }),
       presetRemToPx({ baseFontSize: 4 }),
     ],
+    shortcuts: {
+      'panel-header':  "flex gap-8 items-center border-b border-dashed border-neutral-400 bg-neutral-200 px-16 py-8 text-12"
+    },
     transformers: [
       transformerDirectives(),
     ],

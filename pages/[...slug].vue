@@ -32,7 +32,7 @@ onMounted(() => {
 
 <template>
   <main size-screen of-hidden grid="~ rows-[max-content_1fr]">
-    <!-- <TheNav /> -->
+    <TheNav />
     <MainPlayground />
     <!-- <CommandPalette /> -->
   </main>
