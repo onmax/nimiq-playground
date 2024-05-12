@@ -1,3 +1,5 @@
 <template>
-  <NuxtPage page-key="playground" />
+  <NuxtLayout>
+    <NuxtPage page-key="playground" />
+  </NuxtLayout>
 </template>

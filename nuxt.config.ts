@@ -22,6 +22,7 @@ export default defineNuxtConfig({
       presetAttributify(),
       presetNimiq({
         utilities: true,
+        reset: 'tailwind',
         typography: true,
       }),
       presetRemToPx({ baseFontSize: 4 }),
@@ -57,7 +58,6 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      titleTemplate: '%s - Nimiq Tutorial',
       htmlAttrs: {
         lang: 'en-US',
       },

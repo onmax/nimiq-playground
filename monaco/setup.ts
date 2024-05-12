@@ -14,7 +14,6 @@ export function initMonaco() {
   // @ts-expect-error MonacoEnvironment is a global variable injected for monaco
   self.MonacoEnvironment = {
     async getWorker(_: any, label: string) {
-      console.log('getWorker', label)
       switch (label) {
         case 'typescript':
         case 'javascript':

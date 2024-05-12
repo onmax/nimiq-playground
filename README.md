@@ -2,13 +2,8 @@
 
 ## TODO
 
-- [ ] Add terminal
-- [ ] Create only playground
 - [ ] Create tutorials
-
-
 - [ ] Remove iconify icons and use the minimum
-- [ ] Share code
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 

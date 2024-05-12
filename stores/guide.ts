@@ -14,9 +14,6 @@ export const useGuideStore = defineStore('guide', () => {
   async function mount(guide?: GuideMeta, withSolution = false) {
     await play.init
 
-    // eslint-disable-next-line no-console
-    console.log('mounting guide', guide)
-
     await play.mount({
       ...guide?.files,
       ...withSolution ? guide?.solutions : {},

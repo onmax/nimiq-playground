@@ -15,7 +15,6 @@ const colorMode = useColorMode()
 let tsModel: monaco.editor.ITextModel
 
 function getModel() {
-  console.log(content, props.filepath, tsModel, 'ts')
   if (!tsModel) {
     tsModel = monaco.editor.createModel(content.value, "typescript", monaco.Uri.file(props.filepath),)
   }
@@ -61,7 +60,9 @@ watch(() => el.value, async (value) => {
     content.value = editor.getValue()
   })
 
-  editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS, () => { })
+  editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS, () => {
+    codeToUri(editor.getValue());
+  })
 
   watch(() => props.filepath, () => editor.setModel(getModel()))
 
