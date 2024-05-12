@@ -12,10 +12,10 @@ const { navigation } = useContent() as { navigation: Ref<NavItem[]> }
 
 <template>
   <header flex="~ items-center justify-between" px-32 py-16>
-    <div flex="~ items-center gap-8">
+    <NuxtLink to="/" flex="~ items-center gap-8">
       <div i-nimiq:logos-nimiq-horizontal dark:i-nimiq:logos-nimiq-white-horizontal text-128 h-32="!"></div>
       <h1 text-15 lh-none font-400 tracking-wider text-neutral-800><span sr-only>Nimiq </span>Playground</h1>
-    </div>
+    </NuxtLink>
 
     <NavigationMenuRoot relative z-10 class="raw">
       <NavigationMenuList flex="~ gap-24 items-center" text="14 neutral-900 hocus:*:neutral">
@@ -28,7 +28,7 @@ const { navigation } = useContent() as { navigation: Ref<NavItem[]> }
           <NavigationMenuContent>
             <ul flex="~ col gap-8">
               <li v-for="item in navigation" :key="item._path" :item="item"  w-full hover:bg-neutral-900 transition-colors px-8 py-4 rounded-2>
-                <NavigationMenuLink :href="item._path" :as="NuxtLink">
+                <NavigationMenuLink :href="item._path">
                   {{ item.title }}
                 </NavigationMenuLink>
               </li>
