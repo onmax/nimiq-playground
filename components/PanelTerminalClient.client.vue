@@ -9,24 +9,14 @@ import themeDark from 'theme-vitesse/extra/xterm-vitesse-dark.json'
 const play = usePlaygroundStore()
 
 const colorMode = useColorMode()
-const theme = computed<ITheme>(() => {
-  return colorMode.value === 'dark'
-    ? {
-      ...themeDark,
-      background: '#00000000',
-    }
-    : {
-      ...themeLight,
-      background: '#00000000',
-    }
-})
+const theme = computed<ITheme>(() => colorMode.value === 'dark' ? { ...themeDark, background: '#00000000' } : { ...themeLight, background: '#00000000' })
 
 const root = ref<HTMLDivElement>()
 const terminal = new Terminal({
   customGlyphs: true,
   allowTransparency: true,
   theme: theme.value,
-  fontFamily: 'DM Mono, monospace',
+  fontFamily: 'Fira Code, monospace',
 })
 
 // persist the scroll position of terminal

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 
-
-function downloadCurrentGuide() {
- 
+const colorMode = useColorMode()
+function toggleMode() {
+  colorMode.preference = colorMode.value === 'light' ? 'dark' : 'light'
 }
 
 </script>
@@ -16,7 +16,7 @@ function downloadCurrentGuide() {
     </div>
 
     <NavigationMenuRoot relative z-10 class="raw">
-      <NavigationMenuList flex="~ gap-24 items-center" text="14 neutral-900 hocus:neutral">
+      <NavigationMenuList flex="~ gap-24 items-center" text="14 neutral-900 hocus:*:neutral">
         <NavigationMenuItem>
           <NavigationMenuTrigger flex="~ gap-8 items-center justify-center" px-6 py-2 rounded-4
             bg="transparent hocus:neutral-200" transition-colors>
@@ -35,7 +35,8 @@ function downloadCurrentGuide() {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <NavigationMenuLink href="https://nimiq.com/developers/build/web-client/getting-started" target="_blank" arrow>
+          <NavigationMenuLink href="https://nimiq.com/developers/build/web-client/getting-started" target="_blank"
+            arrow>
             Web Client Docs
           </NavigationMenuLink>
         </NavigationMenuItem>
@@ -45,6 +46,11 @@ function downloadCurrentGuide() {
             <div i-carbon-logo-github text-16 />
           </NavigationMenuLink>
         </NavigationMenuItem>
+
+        <NavigationMenuItem flex="~ items-center">
+          <button @click="toggleMode" dark:i-carbon:sun i-nimiq:moon dark:text-16 rounded />
+        </NavigationMenuItem>
+
       </NavigationMenuList>
 
       <div perspective-2000 absolute top-full left-0 w-full flex="~ justify-center">

@@ -30,6 +30,8 @@ export const usePlaygroundStore = defineStore('playground', () => {
   let _promiseInit: Promise<void> | undefined
   let hasInstalled = false
 
+  const colorMode = useColorMode()
+
   // Mount the playground on client side
   if (import.meta.client) {
     async function init() {
@@ -38,7 +40,7 @@ export const usePlaygroundStore = defineStore('playground', () => {
         filesRaw,
       ] = await Promise.all([
         import('@webcontainer/api').then(({ WebContainer }) => WebContainer.boot()),
-        import('../templates').then(r => r.templates.basic()),
+        import('../templates').then(r => r.templates.basic({darkMode: colorMode.value === 'dark'})),
       ])
 
       filesTemplate = filesRaw
