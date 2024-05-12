@@ -11,13 +11,13 @@ importers:
       '@nimiq/core-web':
         specifier: 2.0.0-alpha.21.1
         version: 2.0.0-alpha.21.1
+      '@unocss/reset':
+        specifier: ^0.60.1
+        version: 0.60.1
       nimiq-css:
         specifier: ^0.0.92
         version: 0.0.92(typescript@5.4.5)(unocss@0.58.9(postcss@8.4.38)(rollup@4.17.2)(vite@5.2.11))(vite@5.2.11)
     devDependencies:
-      '@unocss/reset':
-        specifier: ^0.60.1
-        version: 0.60.1
       typescript:
         specifier: ^5.4.5
         version: 5.4.5

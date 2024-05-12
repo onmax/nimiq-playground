@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import type { NavItem } from '@nuxt/content/dist/runtime/types'
 
 const colorMode = useColorMode()
 function toggleMode() {
   colorMode.preference = colorMode.value === 'light' ? 'dark' : 'light'
 }
 
+const { navigation } = useContent() as { navigation: Ref<NavItem[]> }
 </script>
 
 
@@ -22,13 +24,13 @@ function toggleMode() {
             bg="transparent hocus:neutral-200" transition-colors>
             Tutorials
             <div i-nimiq:chevron-down text-9 />
-
           </NavigationMenuTrigger>
-          <NavigationMenuContent absolute top-0 left-0 w-full sm:w-auto>
+          <NavigationMenuContent>
             <ul flex="~ col gap-8">
-              <li>
-                Item 1
-
+              <li v-for="item in navigation" :key="item._path" :item="item"  w-full hover:bg-neutral-900 transition-colors px-8 py-4 rounded-2>
+                <NavigationMenuLink :href="item._path" :as="NuxtLink">
+                  {{ item.title }}
+                </NavigationMenuLink>
               </li>
             </ul>
           </NavigationMenuContent>
@@ -53,9 +55,9 @@ function toggleMode() {
 
       </NavigationMenuList>
 
-      <div perspective-2000 absolute top-full left-0 w-full flex="~ justify-center">
-        <NavigationMenuViewport relative mt-10 h-="$radix-navigation-menu-viewport-height" w-full of-hidden rounded-8
-          bg-gradient-neutral />
+      <div perspective-2000 absolute top-full z-300 w-full flex="~ justify-center">
+        <NavigationMenuViewport relative h-="$radix-navigation-menu-viewport-height" w-full of-hidden rounded-8 shadow
+          bg-gradient-neutral text-neutral-100 px-8 py-4 />
       </div>
     </NavigationMenuRoot>
   </header>

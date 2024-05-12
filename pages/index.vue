@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import { useStorage } from '@vueuse/core'
-
 const layoutV = useCookie<number[]>('splitter:v-layout')
 const layoutH = useCookie<number[]>('splitter:h-layout')
 
 useHead({title: 'Nimiq Playground'})
 
-const code = useStorage('code', '')
+const code = ref('')
 const codeInUrl = uriToCode()
 if(codeInUrl) code.value = codeInUrl
 </script>

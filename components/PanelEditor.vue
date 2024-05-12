@@ -20,7 +20,6 @@ watch(input, onTextInput, { immediate: true })
 
 function resetCode() {
   input.value = initialInput
-  console.log('reseting to ', play.fileSelected?.read())
   clearCode()
 }
 
