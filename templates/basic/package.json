@@ -9,11 +9,13 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@unocss/reset": "^0.60.1",
     "typescript": "^5.4.5",
     "vite": "^5.2.11",
     "vite-plugin-wasm": "^3.3.0"
   },
   "dependencies": {
-    "@nimiq/core-web": "2.0.0-alpha.21.1"
+    "@nimiq/core-web": "2.0.0-alpha.21.1",
+    "nimiq-css": "^0.0.92"
   }
 }

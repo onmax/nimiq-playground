@@ -3,19 +3,20 @@
     <SplitterPanel id="content-pane" :min-size="20" flex="~ items-center justify-center" h-screen of-auto mr--3 relative w-full>
       <PanelDocs />
     </SplitterPanel>
-    <SplitterResizeHandle id="vertical-handle" mr--6 w-11 hover:bg-neutral-200 relative ml--3 z-10 transition-colors>
-      <div w-1 bg-neutral-400 absolute inset-0 left-5 />
-    </SplitterResizeHandle>
+    <SplitterResizeHandle id="vertical-handle" w-1 h-full bg-neutral-500 z-10 />
     <SplitterPanel id="interactive-pane" :min-size="20">
       <SplitterGroup id="interactive-pane-group" direction="vertical">
         <SplitterPanel id="code-pane" :min-size="20" flex="~ items-center justify-center">
           <PanelEditor />
         </SplitterPanel>
-        <SplitterResizeHandle id="horizontal-handle" h-11 hover:bg-neutral-200 relative ml--3 z-10 transition-colors>
-          <div h-1 bg-neutral-400 absolute inset-0 top-5 left--8 />
-        </SplitterResizeHandle>
-        <SplitterPanel id="iframe-pane" :min-size="20" flex="~ items-center justify-center" mt--5 relative>
+        <SplitterResizeHandle id="vertical-handle-1" h-1 w-full bg-neutral-500 z-10 />
+        <SplitterPanel id="iframe-pane" :min-size="20" flex="~ items-center justify-center">
           <PanelPreview />
+        </SplitterPanel>
+        
+        <SplitterResizeHandle id="vertical-handle-2" h-1 w-full bg-neutral-500 z-10 />
+        <SplitterPanel id="terminal-pane" :min-size="20" flex="~ items-center justify-center">
+          <PanelTerminal />
         </SplitterPanel>
       </SplitterGroup>
     </SplitterPanel>

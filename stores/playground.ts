@@ -50,7 +50,6 @@ export const usePlaygroundStore = defineStore('playground', () => {
         })
 
       wc.on('server-ready', async (_port, url) => {
-        console.log({ _port, url })
         preview.location = { origin: url, fullPath: '/' }
         status.value = PlaygroundStatus.Ready
       })
@@ -114,12 +113,6 @@ export const usePlaygroundStore = defineStore('playground', () => {
       throw new Error('A process is already running')
     const process = await wc.spawn(command, args)
     currentProcess.value = process
-    console.log(currentProcess)
-    currentProcess.value.output.pipeTo(new WritableStream({
-      write(data) {
-        console.log(data);
-      }
-    }));
     return process.exit.then((r) => {
       if (currentProcess.value === process)
         currentProcess.value = undefined
