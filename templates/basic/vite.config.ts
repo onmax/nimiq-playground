@@ -1,12 +1,12 @@
 import { defineConfig } from 'vite'
-import wasm from "vite-plugin-wasm" 
+import wasm from "vite-plugin-wasm"
 
 export default defineConfig({
   plugins: [
-    wasm(), 
+    wasm(),
   ],
 
-  optimizeDeps: { 
-    exclude: ['@nimiq/core-web'], 
-  }, 
+  optimizeDeps: {
+    exclude: ['@nimiq/core'],
+  },
 })

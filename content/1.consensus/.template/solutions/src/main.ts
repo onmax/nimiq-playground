@@ -1,7 +1,7 @@
 // This is a vite project. Use app to append your content to the DOM.
 const app = document.querySelector<HTMLDivElement>('#app')!
 
-import init, { Client, ClientConfiguration } from '@nimiq/core-web/web'
+import init, { Client, ClientConfiguration } from '@nimiq/core/web'
 
 await init()
 

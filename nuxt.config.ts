@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     '@nuxt/content'
   ],
+
   unocss: {
     presets: [
       presetMini(),
@@ -24,6 +25,8 @@ export default defineNuxtConfig({
         utilities: true,
         reset: 'tailwind',
         typography: true,
+        attributifyUtilities: true,
+        prefix: '', // TODO Remove this
       }),
       presetRemToPx({ baseFontSize: 4 }),
     ],
@@ -34,17 +37,21 @@ export default defineNuxtConfig({
       transformerDirectives(),
     ],
   },
+
   colorMode: {
     classSuffix: '',
   },
+
   site: {
     url: 'https://nimiq-playground.nuxt.dev/',
   },
+
   eslint: {
     config: {
       standalone: false,
     },
   },
+
   ogImage: {
     defaults: {
       component: 'OgImageDocs',
@@ -56,6 +63,7 @@ export default defineNuxtConfig({
       global: true,
     },
   },
+
   app: {
     head: {
       htmlAttrs: {
@@ -66,6 +74,7 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   typescript: {
     includeWorkspace: true,
     tsConfig: {
@@ -78,6 +87,7 @@ export default defineNuxtConfig({
   features: {
     inlineStyles: false,
   },
+
   runtimeConfig: {
     public: {
       buildTime: Date.now(),
@@ -92,9 +102,11 @@ export default defineNuxtConfig({
       },
     },
   },
+
   devtools: {
     enabled: true,
   },
+
   nitro: {
     routeRules: {
       '/**': {
@@ -105,6 +117,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   vite: {
     build: {
       minify: 'esbuild',
@@ -127,6 +140,7 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   content: {
     documentDriven: true,
     highlight: {
@@ -144,4 +158,6 @@ export default defineNuxtConfig({
       search: {},
     },
   },
+
+  compatibilityDate: '2024-09-05',
 })
