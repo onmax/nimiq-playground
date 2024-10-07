@@ -13,7 +13,7 @@ export default function load(options: TemplateOptions = {}) {
   if (options.darkMode) {
     rawFiles['index.html'] = rawFiles['index.html'].replace(
       '<html lang="en">',
-      '<html lang="en" class="dark">'
+      '<html lang="en" class="dark">',
     )
   }
 

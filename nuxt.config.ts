@@ -1,49 +1,22 @@
-import { presetAttributify, presetMini, presetUno } from 'unocss'
-import transformerDirectives from '@unocss/transformer-directives'
-import { presetNimiq } from 'nimiq-css'
-import presetRemToPx from '@unocss/preset-rem-to-px'
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
-    "@vueuse/nuxt",
-    "@unocss/nuxt",
+    '@vueuse/nuxt',
+    '@unocss/nuxt',
     'radix-vue/nuxt',
     '@pinia/nuxt',
     '@nuxt/eslint',
     '@nuxtjs/color-mode',
     '@nuxtjs/seo',
-    '@nuxt/content'
+    '@nuxt/content',
   ],
-
-  unocss: {
-    presets: [
-      presetMini(),
-      presetUno({ attributifyPseudo: true }),
-      presetAttributify(),
-      presetNimiq({
-        utilities: true,
-        reset: 'tailwind',
-        typography: true,
-        attributifyUtilities: true,
-        prefix: '', // TODO Remove this
-      }),
-      presetRemToPx({ baseFontSize: 4 }),
-    ],
-    shortcuts: {
-      'panel-header': "flex gap-8 items-center border-b border-dashed border-neutral-500 bg-neutral-200 px-16 py-8 text-12",
-    },
-    transformers: [
-      transformerDirectives(),
-    ],
-  },
 
   colorMode: {
     classSuffix: '',
   },
 
   site: {
-    url: 'https://nimiq-playground.nuxt.dev/',
+    url: 'https://nimiq-playground-nimiq.nuxt.dev/',
   },
 
   eslint: {

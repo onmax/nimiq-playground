@@ -1,21 +1,21 @@
 {
   "name": "nimiq-basic",
-  "private": true,
-  "version": "0.0.0",
   "type": "module",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
-  "devDependencies": {
-    "typescript": "^5.5.4",
-    "vite": "^5.4.3",
-    "vite-plugin-wasm": "^3.3.0"
-  },
   "dependencies": {
     "@nimiq/core": "next",
     "@unocss/reset": "^0.62.3",
     "nimiq-css": "^0.1.11"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "vite": "^5.4.3",
+    "vite-plugin-wasm": "^3.3.0"
   }
 }

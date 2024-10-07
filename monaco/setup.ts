@@ -1,11 +1,11 @@
+import cssWorker from 'monaco-editor/esm/vs/language/css/css.worker?worker'
+import htmlWorker from 'monaco-editor/esm/vs/language/html/html.worker?worker'
+import jsonWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker'
+import tsWorker from 'monaco-editor/esm/vs/language/typescript/ts.worker?worker'
 /* eslint-disable no-restricted-globals */
 /* eslint-disable new-cap */
 import * as monaco from 'monaco-editor-core'
 import editorWorker from 'monaco-editor-core/esm/vs/editor/editor.worker?worker'
-import jsonWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker'
-import tsWorker from 'monaco-editor/esm/vs/language/typescript/ts.worker?worker'
-import cssWorker from 'monaco-editor/esm/vs/language/css/css.worker?worker'
-import htmlWorker from 'monaco-editor/esm/vs/language/html/html.worker?worker'
 
 // import vueWorker from './vue.worker?worker'
 // import { reloadLanguageTools } from './env'
@@ -19,8 +19,8 @@ export function initMonaco() {
         case 'javascript':
           return new tsWorker()
 
-        // case 'vue':
-        //   return new vueWorker()
+          // case 'vue':
+          //   return new vueWorker()
 
         case 'json':
           return new jsonWorker()

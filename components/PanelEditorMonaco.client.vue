@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import * as monaco from 'monaco-editor-core/esm/vs/editor/editor.api'
 import { shikiToMonaco } from '@shikijs/monaco'
+import * as monaco from 'monaco-editor-core/esm/vs/editor/editor.api'
 import { initMonaco } from '~/monaco/setup'
 import { getShiki } from '~/monaco/shiki'
 
@@ -16,7 +16,7 @@ let tsModel: monaco.editor.ITextModel
 
 function getModel() {
   if (!tsModel) {
-    tsModel = monaco.editor.createModel(content.value, "typescript", monaco.Uri.file(props.filepath),)
+    tsModel = monaco.editor.createModel(content.value, 'typescript', monaco.Uri.file(props.filepath))
   }
   return tsModel
 }
@@ -61,12 +61,12 @@ watch(() => el.value, async (value) => {
   })
 
   editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS, () => {
-    codeToUri(editor.getValue());
+    codeToUri(editor.getValue())
   })
 
   watch(() => props.filepath, () => editor.setModel(getModel()))
 
-  watch(content, value => {
+  watch(content, (value) => {
     if (value === editor.getValue())
       return
     const selections = editor.getSelections()

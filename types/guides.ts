@@ -28,4 +28,3 @@ export interface GuideMeta {
    */
   ignoredFiles?: StringOrRegExp[] | GuideIgnoredFiles
 }
-

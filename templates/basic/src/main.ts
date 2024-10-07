@@ -1,6 +1,6 @@
-const app = document.querySelector<HTMLDivElement>('#app')!
-
 import init, { Client, ClientConfiguration } from '@nimiq/core/web'
+
+const app = document.querySelector<HTMLDivElement>('#app')!
 
 await init()
 

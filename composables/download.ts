@@ -16,7 +16,6 @@ export async function downloadZip() {
   if (play.status !== 'ready')
     throw new Error('Playground is not ready')
 
-
   const { default: JSZip } = await import('jszip')
   const zip = new JSZip()
 

@@ -7,7 +7,8 @@ let initialInput = ''
 
 watch(() => [play.fileSelected, guide.currentGuide, guide.showingSolution], () => {
   const content = play.fileSelected?.read() || ''
-  if (!initialInput) initialInput = content
+  if (!initialInput)
+    initialInput = content
   input.value = content
 })
 
@@ -32,20 +33,21 @@ function share() {
 const canDownload = computed(() => play.status === PlaygroundStatus.Ready)
 </script>
 
-
 <template>
   <div size-full grid="~ rows-[min-content_1fr]">
     <div panel-header>
-      <div i-nimiq:icons-lg-languages text-16 />
+      <div text-16 i-nimiq:icons-lg-languages />
       <span flex-auto>Editor</span>
       <div flex-auto />
       <div flex="~ gap-12" op-80>
-        <button :disabled="!canDownload" @click="downloadZip" i-nimiq:arrow-to-bottom disabled:op-40
-          :title="`Download Vite project as a ZIP.${!canDownload ? ' Wait for initialization.' : ''}`" />
+        <button
+          :disabled="!canDownload" i-nimiq:arrow-to-bottom disabled:op-40 :title="`Download Vite project as a ZIP.${!canDownload ? ' Wait for initialization.' : ''}`"
+          @click="downloadZip"
+        />
         <ClientOnly>
-          <button v-if="isSupported" @click="share" i-nimiq:nodes title="Share code" />
+          <button v-if="isSupported" i-nimiq:nodes title="Share code" @click="share" />
         </ClientOnly>
-        <button @click="resetCode" i-nimiq:redo title="Reset code" />
+        <button i-nimiq:redo title="Reset code" @click="resetCode" />
       </div>
       <!-- <ButtonShowSolution my--4 mr--12 flex-none rounded px-8 py-4 text-sm op50 hover="bg-active op100" /> -->
     </div>

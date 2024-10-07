@@ -32,7 +32,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <main size-screen of-hidden grid="~ rows-[max-content_1fr]">
+  <main of-hidden size-screen grid="~ rows-[max-content_1fr]">
     <TheNav border="b neutral-500" />
     <NuxtPage />
   </main>

@@ -1,8 +1,8 @@
 import type { HighlighterCore } from 'shiki/core'
 import { getHighlighterCore } from 'shiki/core'
-import getWasmInlined from 'shiki/wasm'
-
 import langVue from 'shiki/langs/vue.mjs'
+
+import getWasmInlined from 'shiki/wasm'
 // import langTs from 'shiki/langs/typescript.mjs'
 import themeDark from 'shiki/themes/vitesse-dark.mjs'
 import themeLight from 'shiki/themes/vitesse-light.mjs'

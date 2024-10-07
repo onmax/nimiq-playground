@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { PlaygroundStatus } from '#imports';
+import type { PlaygroundStatus } from '#imports'
 
 const play = usePlaygroundStore()
 
@@ -45,10 +45,10 @@ function getTextClass(status: PlaygroundStatus) {
 </script>
 
 <template>
-  <div flex="~ items-center justify-center" v-if="play.status !== PlaygroundStatus.Ready" h-full>
+  <div v-if="play.status !== PlaygroundStatus.Ready" flex="~ items-center justify-center" h-full>
     <template v-if="play.status === 'interactive'">
-    interactive
-  </template>
+      interactive
+    </template>
     <div v-else grid="~ cols-[max-content_1fr] gap-8 items-center justify-center" text-16>
       <div :class="getStatusIcon(PlaygroundStatus.Init)" />
       <span :class="getTextClass(PlaygroundStatus.Init)">Initializing WebContainer</span>

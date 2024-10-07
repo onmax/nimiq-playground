@@ -9,17 +9,17 @@ const preview = usePreviewStore()
 
 const iframe = ref<HTMLIFrameElement>()
 
-const rpc = createBirpc<FrameFunctions, ParentFunctions>({
+createBirpc<FrameFunctions, ParentFunctions>({
   // onNavigate(path) {
   //   preview.location.fullPath = path
   // },
-  async onReady(info) {
+  async onReady(_info) {
     play.status = PlaygroundStatus.Ready
     // preview.clientInfo = info
     // syncColorMode()
   },
 }, {
-  post(payload) {
+  post(_payload) {
     // iframe?.value?.contentWindow?.postMessage({
     //   source: 'nuxt-playground-parent',
     //   payload,
@@ -58,6 +58,6 @@ defineExpose({
     ref="iframe"
     :src="preview.url"
     :style="play.status === 'ready' ? '' : 'opacity: 0.001; pointer-events: none;'"
-    absolute inset-0 h-full w-full bg-transparent allow="geolocation; microphone; camera; payment; autoplay; serial; cross-origin-isolated;"
+    h-full w-full absolute inset-0 bg-transparent allow="geolocation; microphone; camera; payment; autoplay; serial; cross-origin-isolated;"
   />
 </template>

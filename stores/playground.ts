@@ -1,5 +1,5 @@
-import type { Raw } from 'vue'
 import type { WebContainer, WebContainerProcess } from '@webcontainer/api'
+import type { Raw } from 'vue'
 import { VirtualFile } from '~/structures/VirtualFile'
 import { filesToWebContainerFs } from '~/templates/utils'
 
@@ -40,7 +40,7 @@ export const usePlaygroundStore = defineStore('playground', () => {
         filesRaw,
       ] = await Promise.all([
         import('@webcontainer/api').then(({ WebContainer }) => WebContainer.boot()),
-        import('../templates').then(r => r.templates.basic({darkMode: colorMode.value === 'dark'})),
+        import('../templates').then(r => r.templates.basic({ darkMode: colorMode.value === 'dark' })),
       ])
 
       filesTemplate = filesRaw
@@ -86,7 +86,6 @@ export const usePlaygroundStore = defineStore('playground', () => {
     currentProcess.value = undefined
   }
 
-
   async function startServer(reinstall = false) {
     if (!import.meta.client)
       return
@@ -107,7 +106,6 @@ export const usePlaygroundStore = defineStore('playground', () => {
       await launchViteProcess(wc, signal)
 
     await launchInteractiveProcess(wc, signal)
-
   }
 
   async function spawn(wc: WebContainer, command: string, args: string[] = []) {
@@ -149,7 +147,6 @@ export const usePlaygroundStore = defineStore('playground', () => {
       return
     status.value = PlaygroundStatus.Start
     await spawn(wc, 'pnpm', ['run', 'dev'])
-
   }
 
   async function launchInteractiveProcess(wc: WebContainer, signal: AbortSignal) {
@@ -220,7 +217,6 @@ export const usePlaygroundStore = defineStore('playground', () => {
 })
 
 export type PlaygroundStore = ReturnType<typeof usePlaygroundStore>
-
 
 if (import.meta.hot)
   import.meta.hot.accept(acceptHMRUpdate(usePlaygroundStore, import.meta.hot))
