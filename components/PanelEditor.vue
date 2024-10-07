@@ -3,12 +3,12 @@ const play = usePlaygroundStore()
 const guide = useGuideStore()
 
 const queryCode = useRouteQuery<string>('code', '')
-const input = ref(uriToCode(queryCode.value))
+const input = ref('')
 
 watch(
   () => [play.fileSelected, guide.currentGuide, guide.showingSolution],
   () => {
-    input.value = queryCode.value || play.fileSelected?.read() || ''
+    input.value = uriToCode(queryCode.value) || play.fileSelected?.read() || ''
   },
 )
 
@@ -16,6 +16,7 @@ const onTextInput = useDebounceFn(_onTextInput, 500)
 function _onTextInput() {
   if (input.value == null)
     return
+  console.log('input.value', input.value)
   play?.fileSelected?.write(input.value)
 }
 watch(input, onTextInput, { immediate: true })
