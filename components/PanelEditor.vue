@@ -5,12 +5,11 @@ const guide = useGuideStore()
 const queryCode = useRouteQuery<string>('code', '')
 const input = ref(uriToCode(queryCode.value))
 
-watchWithFilter(
+watch(
   () => [play.fileSelected, guide.currentGuide, guide.showingSolution],
   () => {
-    input.value = play.fileSelected?.read() || ''
+    input.value = queryCode.value || play.fileSelected?.read() || ''
   },
-  { eventFilter: () => queryCode.value !== '' },
 )
 
 const onTextInput = useDebounceFn(_onTextInput, 500)
