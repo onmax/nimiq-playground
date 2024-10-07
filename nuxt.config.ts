@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxtjs/seo',
     '@nuxt/content',
+    '@nuxt/fonts',
   ],
 
   colorMode: {
@@ -123,8 +124,8 @@ export default defineNuxtConfig({
       },
     },
     markdown: {
-      remarkPlugins: [
-        'remark-external-links',
+      rehypePlugins: [
+        'rehype-external-links',
       ],
     },
     experimental: {

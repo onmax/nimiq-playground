@@ -13,7 +13,7 @@ router.beforeEach(() => docsEl.value?.scrollTo({ top: 0 }))
 
 <template>
   <div grid="~ rows-[min-content_1fr]" relative size-full>
-    <div w-full flex="~ gap-12" mx-auto panel-header>
+    <div flex="~ gap-12" mx-auto w-full panel-header>
       <div i-nimiq:icons-lg-dashboard text-16 />
       {{ page.title }}
     </div>
@@ -21,17 +21,17 @@ router.beforeEach(() => docsEl.value?.scrollTo({ top: 0 }))
       <article ref="docsEl" class="prose" h-full of-auto p6>
         <ContentDoc />
         <div mt-32 py-8 flex="~ wrap gap-16">
-          <NuxtLink v-if="prev" :to="prev._path" :title="prev.title" pill-blue pill-sm arrow-back>
+          <NuxtLink v-if="prev" :to="prev._path" :title="prev.title" nq-pill-sm nq-arrow-back nq-pill-blue>
             {{ prev.title }}
           </NuxtLink>
-          <NuxtLink v-if="next" :to="next._path" :title="next.title" pill-blue pill-sm m-0 arrow>
+          <NuxtLink v-if="next" :to="next._path" :title="next.title" nq-pill-sm m-0 nq-arrow nq-pill-blue>
             {{ next.title }}
           </NuxtLink>
         </div>
-        <div border="t base dashed" mt-64 p-12 flex>
+        <div border="t base dashed" mt-64 flex p-12>
           <NuxtLink
             v-if="sourceUrl" :to="sourceUrl" target="_blank" flex="~ items-center gap-8"
-            hover="text-primary op100" m-0 w-max text-inherit op-70 text-12
+            hover="text-primary op100" m-0 w-max text-12 text-inherit op-70
           >
             <div i-ph-note-pencil-duotone />
             Edit this page

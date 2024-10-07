@@ -1,26 +1,28 @@
 <script setup lang="ts">
-const input = defineModel<string>({ required: true })
 const play = usePlaygroundStore()
 const guide = useGuideStore()
 
-let initialInput = ''
+const queryCode = useRouteQuery<string>('code', '')
+const input = ref(uriToCode(queryCode.value))
 
-watch(() => [play.fileSelected, guide.currentGuide, guide.showingSolution], () => {
-  const content = play.fileSelected?.read() || ''
-  if (!initialInput)
-    initialInput = content
-  input.value = content
-})
+watchWithFilter(
+  () => [play.fileSelected, guide.currentGuide, guide.showingSolution],
+  () => {
+    input.value = play.fileSelected?.read() || ''
+  },
+  { eventFilter: () => queryCode.value !== '' },
+)
 
 const onTextInput = useDebounceFn(_onTextInput, 500)
 function _onTextInput() {
-  if (input.value != null)
-    play?.fileSelected?.write(input.value)
+  if (input.value == null)
+    return
+  play?.fileSelected?.write(input.value)
 }
 watch(input, onTextInput, { immediate: true })
 
 function resetCode() {
-  input.value = initialInput
+  input.value = ''
   clearCode()
 }
 
@@ -36,7 +38,7 @@ const canDownload = computed(() => play.status === PlaygroundStatus.Ready)
 <template>
   <div size-full grid="~ rows-[min-content_1fr]">
     <div panel-header>
-      <div text-16 i-nimiq:icons-lg-languages />
+      <div i-nimiq:icons-lg-languages text-16 />
       <span flex-auto>Editor</span>
       <div flex-auto />
       <div flex="~ gap-12" op-80>

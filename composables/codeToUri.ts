@@ -15,12 +15,10 @@ export function codeToUri(text: string) {
   return route.fullPath
 }
 
-export function uriToCode() {
-  const route = useRoute()
-  const base64data = route.query.code as string
-  if (!base64data)
+export function uriToCode(maybeBase64Data?: string) {
+  if (!maybeBase64Data)
     return ''
-  const text = atob(base64data)
+  const text = atob(maybeBase64Data)
   return text
 }
 

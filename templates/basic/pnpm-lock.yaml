@@ -17,6 +17,9 @@ importers:
       nimiq-css:
         specifier: ^0.1.11
         version: 0.1.11(typescript@5.5.4)(unocss@0.58.9(postcss@8.4.45)(rollup@4.21.2)(vite@5.4.3))(vite@5.4.3)
+      nimiq-rpc-client-ts:
+        specifier: ^0.4.0
+        version: 0.4.0(bufferutil@4.0.8)(utf-8-validate@5.0.10)
     devDependencies:
       typescript:
         specifier: ^5.5.4
@@ -800,6 +803,9 @@ packages:
       unocss: ^0.58.5
       vite: ^2.9.0 || ^3.0.0-0 || ^4.0.0 || ^5.0.0-0
 
+  nimiq-rpc-client-ts@0.4.0:
+    resolution: {integrity: sha512-Syz4b3PrYEekQfcpmeFqN2ChNG2yV40hg8nMKRpb5LXrKj37YgRSpm6zjL7IStxfHCEcn5aQPw0U14DOh/jFvA==}
+
   node-fetch-native@1.6.4:
     resolution: {integrity: sha512-IhOigYzAKHd244OC0JIMIUrjzctirCmPkaIfhDeGcEETWof5zKYUW7e7MYvChGWh/4CJeXEgsRyGzuF334rOOQ==}
 
@@ -971,6 +977,18 @@ packages:
   websocket@1.0.35:
     resolution: {integrity: sha512-/REy6amwPZl44DDzvRCkaI1q1bIiQB0mEFQLUrhz3z2EK91cp3n72rAjUlrTP0zV22HJIUOVHQGPxhFRjxjt+Q==}
     engines: {node: '>=4.0.0'}
+
+  ws@8.18.0:
+    resolution: {integrity: sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
 
   yaeti@0.0.6:
     resolution: {integrity: sha512-MvQa//+KcZCUkBTIC9blM+CU9J2GzuTytsOUwf2lidtvkx/6gnEp1QvJv34t9vdjhFmha/mUiNDbN0D0mJWdug==}
@@ -1788,6 +1806,13 @@ snapshots:
       unocss: 0.58.9(postcss@8.4.45)(rollup@4.21.2)(vite@5.4.3)
       vite: 5.4.3
 
+  nimiq-rpc-client-ts@0.4.0(bufferutil@4.0.8)(utf-8-validate@5.0.10):
+    dependencies:
+      ws: 8.18.0(bufferutil@4.0.8)(utf-8-validate@5.0.10)
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
   node-fetch-native@1.6.4: {}
 
   node-gyp-build@4.8.2: {}
@@ -1961,6 +1986,11 @@ snapshots:
       yaeti: 0.0.6
     transitivePeerDependencies:
       - supports-color
+
+  ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@5.0.10):
+    optionalDependencies:
+      bufferutil: 4.0.8
+      utf-8-validate: 5.0.10
 
   yaeti@0.0.6: {}
 

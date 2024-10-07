@@ -58,6 +58,6 @@ defineExpose({
     ref="iframe"
     :src="preview.url"
     :style="play.status === 'ready' ? '' : 'opacity: 0.001; pointer-events: none;'"
-    h-full w-full absolute inset-0 bg-transparent allow="geolocation; microphone; camera; payment; autoplay; serial; cross-origin-isolated;"
+    absolute inset-0 h-full w-full bg-transparent allow="geolocation; microphone; camera; payment; autoplay; serial; cross-origin-isolated;"
   />
 </template>

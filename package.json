@@ -2,6 +2,7 @@
   "name": "nuxt-app",
   "type": "module",
   "private": true,
+  "packageManager": "pnpm@9.12.0+sha512.4abf725084d7bcbafbd728bfc7bee61f2f791f977fd87542b3579dcb23504d170d46337945e4c66485cd12d588a0c0e570ed9c477e7ccdd8507cf05f3f92eaca",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -13,12 +14,14 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@nuxt/fonts": "^0.9.2",
     "@nuxt/kit": "^3.13.2",
     "@shikijs/core": "^1.22.0",
     "@shikijs/monaco": "^1.22.0",
     "@volar/monaco": "^2.4.6",
     "@vue/language-service": "^2.1.6",
     "@vueuse/core": "^11.1.0",
+    "@vueuse/router": "^11.1.0",
     "@webcontainer/api": "^1.3.0",
     "@xterm/addon-fit": "^0.10.0",
     "@xterm/xterm": "^5.5.0",
@@ -28,10 +31,10 @@
     "monaco-editor": "^0.52.0",
     "monaco-editor-textmate": "^4.0.0",
     "monaco-textmate": "^3.0.1",
-    "nimiq-css": "^0.2.18",
     "nuxt": "^3.13.2",
     "pathe": "^1.1.2",
     "radix-vue": "^1.9.6",
+    "rehype-external-links": "^3.0.0",
     "shiki": "^1.22.0",
     "theme-vitesse": "^0.8.3",
     "unified": "^11.0.5",
@@ -40,6 +43,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.7.3",
+    "@iconify-json/nimiq": "https://pkg.pr.new/onmax/nimiq-ui/nimiq-icons@24e0317",
     "@iconify/json": "^2.2.257",
     "@nuxt/content": "^2.13.2",
     "@nuxt/eslint": "^0.5.7",
@@ -55,7 +59,8 @@
     "eslint": "^9.12.0",
     "eslint-plugin-format": "^0.1.2",
     "monaco-editor-core": "^0.52.0",
-    "remark-external-links": "^10.0.0",
-    "typescript": "^5.6.2"
+    "nimiq-css": "^0.2.19",
+    "typescript": "^5.6.2",
+    "unocss": "^0.63.2"
   }
 }
