@@ -16,7 +16,6 @@ const onTextInput = useDebounceFn(_onTextInput, 500)
 function _onTextInput() {
   if (input.value == null)
     return
-  console.log('input.value', input.value)
   play?.fileSelected?.write(input.value)
 }
 watch(input, onTextInput, { immediate: true })
